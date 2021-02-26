@@ -8,7 +8,7 @@ API repo: https://github.com/15Dkatz/official_joke_api
 Endpoind Used: https://official-joke-api.appspot.com/jokes/programming/random
 
 
-link:
+Project Link to latest version:
 https://iamserda.github.io/jokramming/
 
 
@@ -26,5 +26,4 @@ https://iamserda.github.io/jokramming/v.0.0.2
 https://iamserda.github.io/jokramming/v.0.0.1
 
 
-
-
+Future Update: UNKNOWN_AT_THIS_TIME

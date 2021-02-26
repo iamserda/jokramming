@@ -42,11 +42,10 @@ function showLetterInSentence(sentence, myElem) {
     var timeToLive = (sentence.length) * 100;
 
     function appendLetter() {
-        if (sentence[i] === undefined) {
-            sentence[i] = " ";
+        if (sentence[i] == undefined) {
+            sentence[i] = "";
         }
-        myElem.append(sentence[i])
-        i++;
+        myElem.append(sentence[i++])
         // console.log(sentence[i++])
     }
     const intervalId = setInterval(appendLetter, 100)
@@ -81,7 +80,7 @@ newBtn.addEventListener('click', () => {
     // show punTerm, punBtn
     punTerm.classList.toggle('hidden');
     punBtn.classList.toggle('hidden')
-    console.log(setupBox.textContent, punBox.textContent);
+
 })
 
 punBtn.addEventListener('click', () => {
@@ -93,5 +92,6 @@ punBtn.addEventListener('click', () => {
     punBtn.classList.toggle('hidden')
     // show newJokeButton.
     newBtn.classList.toggle('hidden');
-    console.log(setupBox.textContent, punBox.textContent);
+
 })
+

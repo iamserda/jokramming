@@ -11,19 +11,16 @@ let data;
 async function fetchJoke(apiUrl) {
     const jokeResponse = await fetch(apiUrl);
     data = await jokeResponse.json();
-
-    console.log(data[0])
     displaySetup();
-
 }
 
 function displaySetup() {
-
+    console.log(data);
 
     const {
         setup
     } = data[0];
-    console.log(setup);
+
     // setupBox.textContent = setup;
     // punBox.textContent = punchline;
     showLetterInSentence(setup, setupBox)
@@ -33,23 +30,24 @@ function displaySetup() {
 }
 
 function displayPun() {
-
-
     const {
         punchline
     } = data[0];
-    console.log(punchline);
     showLetterInSentence(punchline, punBox)
 }
 
 function showLetterInSentence(sentence, myElem) {
     // const sentence = "Why do fools fall in love?" //test
-    sentence = sentence + "  ";
     let i = 0;
     var timeToLive = (sentence.length) * 100;
 
     function appendLetter() {
-        myElem.append(sentence[i++])
+        if (sentence[i] === undefined) {
+            sentence[i] = " ";
+        }
+        myElem.append(sentence[i])
+        i++;
+        // console.log(sentence[i++])
     }
     const intervalId = setInterval(appendLetter, 100)
 
@@ -83,7 +81,7 @@ newBtn.addEventListener('click', () => {
     // show punTerm, punBtn
     punTerm.classList.toggle('hidden');
     punBtn.classList.toggle('hidden')
-
+    console.log(setupBox.textContent, punBox.textContent);
 })
 
 punBtn.addEventListener('click', () => {
